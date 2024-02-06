@@ -1,0 +1,6 @@
+<form action="/session/create" method="post">
+    <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}">
+    <label>Email: <input type="email" name="email" class="form-control"></label>
+    <label>Password: <input type="password" name="password" class="form-control"></label>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+  </form>

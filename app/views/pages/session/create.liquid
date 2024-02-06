@@ -1,0 +1,12 @@
+---
+method: post
+---
+{% liquid
+  graphql result = 'user/verify_password', email: context.params.email, password: context.params.password
+  if result.users.results.first.authenticate.password
+    sign_in user_id: result.users.results.first.id
+    redirect_to '/'
+  else
+    echo "Incorrect email or password"
+  endif
+%}
